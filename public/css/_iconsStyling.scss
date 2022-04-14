@@ -1,0 +1,175 @@
+// body{
+//     display: none !important;
+// }
+
+@font-face {
+    font-family: 'Icons';
+    // src:  url('fonts/Icons.eot?83gc3z');
+    src:  url('../assets/fonts/Icons.eot');
+    src:  url('../assets/fonts/Icons.eot?83gc3z#iefix') format('embedded-opentype'),
+      url('../assets/fonts/Icons.ttf?83gc3z') format('truetype'),
+      url('../assets/fonts/Icons.woff?83gc3z') format('woff'),
+      url('../assets/fonts/Icons.svg?83gc3z#Icons') format('svg');
+    // src:  url('fonts/Icons.eot?83gc3z#iefix') format('embedded-opentype'),
+    //   url('fonts/Icons.ttf?83gc3z') format('truetype'),
+    //   url('fonts/Icons.woff?83gc3z') format('woff'),
+    //   url('fonts/Icons.svg?83gc3z#Icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'Icons' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-logo:before {
+    content: "\e900";
+  }
+  .icon-watch__stopwatch:before {
+    content: "\e901";
+  }
+  .icon-app__brush:before {
+    content: "\e902";
+  }
+  .icon-paint__tool__Bucket:before {
+    content: "\e903";
+  }
+  .icon-app__calculator:before {
+    content: "\e904";
+  }
+  .icon-paint__tool__colorPicker:before {
+    content: "\e905";
+  }
+  .icon-paint__tool__elipseSelector:before {
+    content: "\e906";
+  }
+  .icon-paint__tool_eraser:before {
+    content: "\e907";
+  }
+  .icon-paint__tool__rectangleSelector:before {
+    content: "\e908";
+  }
+  .icon-paint__tool__spray:before {
+    content: "\e909";
+  }
+  .icon-watch__timer:before {
+    content: "\e90a";
+  }
+  .icon-paint__folder:before {
+    content: "\e90b";
+  }
+  .icon-music__play:before {
+    content: "\e90c";
+  }
+  .icon-music__skipBack:before {
+    content: "\e90d";
+  }
+  .icon-music__skipForward:before {
+    content: "\e90e";
+  }
+  .icon-notepad__underline:before {
+    content: "\e90f";
+  }
+  .icon-app__notepad:before {
+    content: "\e910";
+  }
+  .icon-notepad__save:before {
+    content: "\e911";
+  }
+  .icon-general__check:before {
+    content: "\e912";
+  }
+  .icon-app__clock:before {
+    content: "\e913";
+  }
+  .icon-paint__tool__pen:before {
+    content: "\e914";
+  }
+  .icon-general__eye:before {
+    content: "\e915";
+  }
+  .icon-general__eye-off:before {
+    content: "\e916";
+  }
+  .icon-social__github:before {
+    content: "\e917";
+  }
+  .icon-general__home:before {
+    content: "\e918";
+  }
+  .icon-notepad__italic:before {
+    content: "\e919";
+  }
+  .icon-notepad_bulletList:before {
+    content: "\e91a";
+  }
+  .icon-general__log-in:before {
+    content: "\e91b";
+  }
+  .icon-general__log-out:before {
+    content: "\e91c";
+  }
+  .icon-app__music:before {
+    content: "\e91d";
+  }
+  .icon-music__pause:before {
+    content: "\e91e";
+  }
+  .icon-paint__penTool:before {
+    content: "\e91f";
+  }
+  .icon-general__plus:before {
+    content: "\e920";
+  }
+  .icon-music__loop:before {
+    content: "\e921";
+  }
+  .icon-paint__saveCanvas:before {
+    content: "\e922";
+  }
+  .icon-general__search:before {
+    content: "\e923";
+  }
+  .icon-paint__export:before {
+    content: "\e924";
+  }
+  .icon-app__settings:before {
+    content: "\e925";
+  }
+  .icon-music__shuffle:before {
+    content: "\e926";
+  }
+  .icon-general__trash:before {
+    content: "\e927";
+  }
+  .icon-paint__tool__type:before {
+    content: "\e928";
+  }
+  .icon-music__volume:before {
+    content: "\e929";
+  }
+  .icon-music__muted:before {
+    content: "\e92a";
+  }
+  .icon-general__close:before {
+    content: "\e92b";
+  }
+  .icon-social__linkedin:before {
+    content: "\e92c";
+  }
+  .icon-social__twitter:before {
+    content: "\e92d";
+  }
+  

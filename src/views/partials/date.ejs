@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 id="hour"></h1>
+    <span class="icon-watch__stopwatch"></span>
+</div>
+<script>
+    const setDate = function(){
+    
+        let newDate = new Date();
+
+        let hours = newDate.getHours();
+        let minutes = newDate.getMinutes();
+        minutes = zero(minutes);
+
+        function zero(x) {
+            if (x < 10) {
+                x = '0' + x;
+            } return x;
+        }
+        document.getElementById('hour').textContent = hours+':'+minutes;
+        console.log("1");
+    }
+    setInterval(setDate,1000)
+    </script>

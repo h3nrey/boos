@@ -15,8 +15,11 @@ app.set("view engine", "ejs");
 //Middleware
 app.use(express.urlencoded({ extended : true }))
 
-app.get("/", (req,res) => {
-    res.render("index");
-})
+//parse application/json
+app.use(express.json());
 
-app.listen(port);
+const router = require("./src/server/routes/base");
+app.use("/", router);
+
+//listening port
+app.listen(port, () => console.log(`listening on port ${port}`));
