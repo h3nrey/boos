@@ -1,0 +1,50 @@
+<div class="userForm__container" style="background-color: red;">
+    <form action="" id="login__form" method="post" style="background-color: rgb(41, 41, 42);">
+        <div class="input_wrapper">
+            <label for="" id="username__label">Username</label>
+            <input type="text" id="username__input" name="username" required>
+        </div>
+        <div class="input__wrapper">
+            <label for="" id="password__label">Senha</label>
+            <input type="password" id="password__input" name="password" required>
+        </div>
+        <div class="loggin__button__container">
+            <button type="submit" id="loggin_button">Logar</button>
+            <a href="">Esqueci a senha</a>
+        </div>
+    </form>
+    <div class="signup__sugestion__container">
+        <p>não tem uma conta?</p>
+        <button id="signup__sugestion__button">Criar Conta</button>
+    </div>
+
+    <form action="/" method="post" id="signup__form" style="background-color: rgb(41, 41, 42);">
+        <div class="input_wrapper">
+            <label for="" id="username__label">Username</label>
+            <input type="text" id="username__input" name="username" required>
+        </div>
+        <div class="input_wrapper">
+            <label for="" id="email__label">Email</label>
+            <input type="email" id="email__input" name="email" required>
+        </div>
+        <div class="input__wrapper">
+            <label for="" id="password__label">Senha</label>
+            <input type="password" id="password__input" name="password" required>
+        </div>
+        <div class="loggin__button__container">
+            <button type="submit" id="loggin_button">Registrar</button>
+        </div>
+    </form>
+    <div class="loggin__sugestion__container">
+        <p>Já tem uma conta?</p>
+        <button id="loggin__sugestion__button">Logar</button>
+    </div>
+</div>
+
+<script>
+    const logginButton = document.querySelector("button#loggin_button");
+    logginButton.addEventListener("click", () => {
+        const userInput = document.querySelector("form#login__form input#username__input");
+        const loginForm = document.querySelector("form#login__form").action = `/home/${userInput.value}`
+    })
+</script>
