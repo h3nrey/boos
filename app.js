@@ -1,6 +1,7 @@
 const express = require("express");
 const app  = express();
 const port = process.env.PORT || 5000;
+require('dotenv').config();
 
 //static files
 app.use(express.static("public"));
@@ -15,7 +16,7 @@ app.set("view engine", "ejs");
 //Middleware
 app.use(express.urlencoded({ extended : true }))
 
-//parse application/json
+//Parse application/json
 app.use(express.json());
 
 const router = require("./src/server/routes/base");
