@@ -204,4 +204,14 @@
 .icon-social__twitter:before {
   content: "\e92d";
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
 /*# sourceMappingURL=styles.css.map */
