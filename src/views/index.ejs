@@ -2,7 +2,28 @@
 <html lang="en">
     <%-include ("./partials/head.ejs") %> 
 <body>
-    boOS the operational system for the big guys
-    <%-include ("./partials/date.ejs")%>
+    <div class="container">
+        <!-- <%-include ("./partials/date.ejs")%> -->
+        <%- include("./partials/lockscreen/userForm.ejs")%> 
+        <% if (message != null) { %>
+            <p><%=message%></p>        
+        <% } %>
+    </div>
 </body>
+<script>
+    const setResolution = () => {
+        let resolution = "1920x1080";
+
+        if(checkScreenResolution(700)) resolution = "375x667";
+        else if(checkScreenResolution(2000)) resolution = "1920x1080";
+        
+        function checkScreenResolution(size) {
+            return window.matchMedia(`(max-width: ${size}px)`).matches
+        }
+
+        return resolution;
+    }
+    
+    document.querySelector("div.container").style.backgroundImage = `url('https://source.unsplash.com/${setResolution()}/?nature')`;
+</script>
 </html>
