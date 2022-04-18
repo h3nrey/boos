@@ -2,15 +2,15 @@
 <html lang="en">
     <%-include ("./partials/head.ejs") %> 
 <body>
-    <div class="container">
-        <!-- <%-include ("./partials/date.ejs")%> -->
+    <div class="container container__flex container__flex__centered">
+        <%-include ("./partials/date.ejs")%>
         <%- include("./partials/lockscreen/userForm.ejs")%> 
         <% if (message != null) { %>
             <p><%=message%></p>        
         <% } %>
     </div>
 </body>
-<script>
+<script name="setup background resolution">
     const setResolution = () => {
         let resolution = "1920x1080";
 
@@ -25,5 +25,27 @@
     }
     
     document.querySelector("div.container").style.backgroundImage = `url('https://source.unsplash.com/${setResolution()}/?nature')`;
+</script>
+<script name="toggle containers">
+    
+    let isOut = true;
+    
+    
+    const divs = ["div#date__container", "div#userForm__container"];
+    divs.forEach(selector => {
+        let element = document.querySelector(selector);
+
+        document.querySelector("div.container").addEventListener("click", () => {
+            if (isOut) {
+                element.classList.toggle("hidden");                
+            }
+        })
+        element.addEventListener("mouseout", () => {
+            isOut = true;
+        })
+        element.addEventListener("mouseover", () => {
+            isOut = false;
+        })
+    });
 </script>
 </html>

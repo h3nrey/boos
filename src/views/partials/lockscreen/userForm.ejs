@@ -1,43 +1,42 @@
-<div class="userForm__container" style="background-color: red;">
-    <form action="" id="login__form" method="post" style="background-color: rgb(41, 41, 42);">
-        <div class="input_wrapper">
-            <label for="" id="username__label">Username</label>
-            <input type="text" id="username__input" name="username" required>
+<div id="userForm__container"  class="rounded container__flex text">
+    <div id="login__container" class="aligned__centered container__flex">
+        <form action="" class="user__form rounded" id="login__form" class="text container__flex container__direction__column bg bg__dark" method="post" style="background-color: rgb(41, 41, 42);">
+            <%- include("./inputWrapper", {inputId:"username", inputType:"text", labelText:"Username", inputName:"username"})  %> 
+            <%- include("./inputWrapper", {inputId:"password", inputType:"password", labelText:"Senha", inputName:"password"})  %> 
+    
+            <div class="loggin__button__container Mmargin__top form__button__container container__flex justified__spaced aligned__centered">
+                <%- include("../../components/button", {buttonId:"loggin_button", buttonType:"submit",buttonText:"Logar", specificClasses:"darkHover bg apple light text"})%>
+                <a href="" class="dark text">Esqueci a senha</a>
+            </div>
+        </form>
+        <div id="signup__sugestion__container" class="container__flex aligned__centered container__direction__column text Bmargin__bottom">
+            <p class="text__semibold">não tem uma conta?</p>
+            <%- include("../../components/button", {buttonId:"signup__sugestion__button",buttonType:"button", buttonText:"Criar Conta", specificClasses:"Mmargin__top bg bg__dark dark text"})%> 
         </div>
-        <div class="input__wrapper">
-            <label for="" id="password__label">Senha</label>
-            <input type="password" id="password__input" name="password" required>
-        </div>
-        <div class="loggin__button__container">
-            <button type="submit" id="loggin_button">Logar</button>
-            <a href="">Esqueci a senha</a>
-        </div>
-    </form>
-    <div class="signup__sugestion__container">
-        <p>não tem uma conta?</p>
-        <button id="signup__sugestion__button">Criar Conta</button>
     </div>
 
-    <form action="/" method="post" id="signup__form" style="background-color: rgb(41, 41, 42);">
-        <div class="input_wrapper">
-            <label for="" id="username__label">Username</label>
-            <input type="text" id="username__input" name="username" required>
+    <div id="signup__container" class="hidden Mmargin__top">
+        <form action="/" method="post" id="signup__form" style="background-color: rgb(41, 41, 42);">
+            <div class="input_wrapper">
+                <label for="" id="username__label">Username</label>
+                <input type="text" id="username__input" name="username" required>
+            </div>
+            <div class="input_wrapper">
+                <label for="" id="email__label">Email</label>
+                <input type="email" id="email__input" name="email" required>
+            </div>
+            <div class="input__wrapper">
+                <label for="" id="password__label">Senha</label>
+                <input type="password" id="password__input" name="password" required>
+            </div>
+            <div class="loggin__button__container">
+                <button type="submit" id="loggin_button">Registrar</button>
+            </div>
+        </form>
+        <div class="loggin__sugestion__container">
+            <p>Já tem uma conta?</p>
+            <button id="loggin__sugestion__button">Logar</button>
         </div>
-        <div class="input_wrapper">
-            <label for="" id="email__label">Email</label>
-            <input type="email" id="email__input" name="email" required>
-        </div>
-        <div class="input__wrapper">
-            <label for="" id="password__label">Senha</label>
-            <input type="password" id="password__input" name="password" required>
-        </div>
-        <div class="loggin__button__container">
-            <button type="submit" id="loggin_button">Registrar</button>
-        </div>
-    </form>
-    <div class="loggin__sugestion__container">
-        <p>Já tem uma conta?</p>
-        <button id="loggin__sugestion__button">Logar</button>
     </div>
 </div>
 

@@ -1,0 +1,81 @@
+#userForm__container{
+    padding: 1rem 1.5rem;
+    position: relative;
+    
+    &:before {
+        transform: translate(-4%, 37%);
+        position: absolute;
+        background-color: $apple;
+        content: "";
+        width: 100%;
+        height: 70%;
+        z-index: -1;
+        border-radius: 0.25rem;
+    }
+
+    #login__container{
+        align-items: flex-end;
+    }
+    
+}
+
+.user__form{
+    padding: 0.9rem;
+}
+
+.lockscreen__input{
+    height: 2.1rem;
+    width: 15rem;
+    padding-left: 0.5rem;
+
+    &:focus-visible{
+        outline: 0;
+
+    }
+}
+
+.input__underline{
+    width: 100%;
+
+    &::after{
+        width: 0;
+        background-color: $strongApple;
+        content: "";
+        height: 8px;
+        position: absolute;
+        transform: translateY(-70%);
+        z-index: 5;
+        border-radius: 0 0 0.25rem 0.25rem; 
+        transition: all 600ms;
+    }
+}
+
+.lockscreen__input:focus-visible + .input__underline::after{
+    width: 49.8%;
+}
+
+.input__wrapper{
+    margin-top: 1rem;
+}
+
+.userForm__button{
+    padding: 0.3rem 1.2rem;
+    font-size: 0.87rem;
+}
+
+.form__button__container{
+    margin-bottom: 1rem;
+}
+
+#signup__sugestion__container{
+    margin-left: 1.6rem;
+
+    p{
+        max-width: 90%;
+        text-align: center;
+
+        &::first-letter{
+            text-transform: uppercase;
+        }
+    }
+}

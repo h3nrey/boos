@@ -1,0 +1,102 @@
+.hidden{
+    display: none !important;
+}
+
+//containers
+.container__flex{
+    display: flex; 
+}
+
+.container__flex__centered{
+    align-items: center;
+    justify-content: center;
+}
+
+.container__direction__column{
+    flex-direction: column;
+}
+
+.aligned__centered{
+    align-items: center;
+}
+
+.justified__centered{
+    justify-content: center;
+}
+
+.justified__spaced{
+    justify-content: space-between;
+}
+
+//texts
+.text__tittle{
+    font-family: "poppins", sans-serif;
+    font-weight: 700;
+}
+
+
+.text{
+    font-family: "roboto", sans-serif;
+}
+
+.text__semibold{
+    font-weight: 500;
+}
+
+//colors
+.dark.bg{
+    background-color: $bg;
+}
+
+.light.text{
+    color: $lightTittleText;
+}
+
+.dark.text{
+    color: $darkText;
+}
+.dark.tittle{
+    color: $darkTittleText;
+}
+
+//themes bg
+.bg.apple{
+    background-color: $apple;
+}
+
+.bg.bg__dark{
+    background-color: $bgDark;
+}
+
+//border
+.rounded{
+    border-radius: 0.25rem;
+}
+
+.bordless{
+    border: 0;
+}
+
+//margin
+.Mmargin__top{
+    margin-top: 1rem;
+}
+
+.Mmargin__bottom{
+    margin-bottom: 1rem;
+}
+
+.Bmargin__bottom{
+    margin-bottom: 2rem;
+}
+
+//animations
+.fluid{
+    transition: all 400ms;
+}
+
+.darkHover{
+    &:hover{
+        filter: brightness(70%);
+    }
+}
