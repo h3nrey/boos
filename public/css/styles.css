@@ -209,6 +209,8 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 button {
@@ -220,7 +222,7 @@ button {
   height: 100vh;
 }
 
-.hidden {
+.disabled {
   display: none !important;
 }
 
@@ -285,6 +287,10 @@ button {
   color: #F2F2F2;
 }
 
+.dark.text__bgLight {
+  color: #302F3D;
+}
+
 .dark.text {
   color: #9691AB;
 }
@@ -313,12 +319,20 @@ button {
   margin-top: 1rem;
 }
 
+.Bmargin__top {
+  margin-top: 2rem;
+}
+
 .Mmargin__bottom {
   margin-bottom: 1rem;
 }
 
 .Bmargin__bottom {
   margin-bottom: 2rem;
+}
+
+.Mmargin__right {
+  margin-right: 1rem;
 }
 
 .fluid {
@@ -334,6 +348,76 @@ button {
 div.container {
   z-index: -2;
   position: fixed;
+}
+
+.container #date__container.hidden {
+  -webkit-animation: scaleUp ease-in 1s;
+          animation: scaleUp ease-in 1s;
+}
+
+.container #userForm__container.hidden {
+  -webkit-animation: goDown ease-in 1s;
+          animation: goDown ease-in 1s;
+}
+
+@-webkit-keyframes goDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  90% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes goDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  90% {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  90% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  90% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 #date__container {
@@ -370,20 +454,62 @@ div.container {
   border-radius: 0.25rem;
 }
 
-#userForm__container #login__container {
+#userForm__container #login__container, #userForm__container #signup__container {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+#userForm__container #login__container .sugestion__container, #userForm__container #signup__container .sugestion__container {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+#userForm__container #login__container.hidden, #userForm__container #signup__container.hidden {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  width: 0;
+}
+
+#userForm__container #signup__container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#userForm__container #signup__container.hidden {
+  padding-left: 0;
+}
+
+#userForm__container #signup__container.hidden .sugestion__container {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+#userForm__container #login__container.hidden {
+  padding-right: 0;
+}
+
+#userForm__container #login__container.hidden .sugestion__container {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .user__form {
   padding: 0.9rem;
+  width: 16.7rem;
+  z-index: 23;
 }
 
 .lockscreen__input {
   height: 2.1rem;
-  width: 15rem;
+  width: 100%;
   padding-left: 0.5rem;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
 
 .lockscreen__input:focus-visible {
@@ -417,16 +543,12 @@ div.container {
 }
 
 .userForm__button {
-  padding: 0.3rem 1.2rem;
+  padding: 0.5rem 1.2rem;
   font-size: 0.87rem;
 }
 
 .form__button__container {
   margin-bottom: 1rem;
-}
-
-#signup__sugestion__container {
-  margin-left: 1.6rem;
 }
 
 #signup__sugestion__container p {
@@ -436,5 +558,10 @@ div.container {
 
 #signup__sugestion__container p::first-letter {
   text-transform: uppercase;
+}
+
+.sugestion__container {
+  -webkit-transition-delay: 420ms;
+          transition-delay: 420ms;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,49 +1,63 @@
-<div id="userForm__container"  class="rounded container__flex text">
-    <div id="login__container" class="aligned__centered container__flex">
+<div id="userForm__container"  class="disabled rounded container__flex text">
+    <div id="login__container" class="aligned__centered container__flex fluid">
         <form action="" class="user__form rounded" id="login__form" class="text container__flex container__direction__column bg bg__dark" method="post" style="background-color: rgb(41, 41, 42);">
-            <%- include("./inputWrapper", {inputId:"username", inputType:"text", labelText:"Username", inputName:"username"})  %> 
-            <%- include("./inputWrapper", {inputId:"password", inputType:"password", labelText:"Senha", inputName:"password"})  %> 
+            <%- include("./inputWrapper", {inputId:"login__username", inputType:"text", labelText:"Username", inputName:"username"})  %> 
+            <%- include("./inputWrapper", {inputId:"login__password", inputType:"password", labelText:"Senha", inputName:"password"})  %> 
     
-            <div class="loggin__button__container Mmargin__top form__button__container container__flex justified__spaced aligned__centered">
+            <div class="loggin__button__container Bmargin__top form__button__container container__flex justified__spaced aligned__centered">
                 <%- include("../../components/button", {buttonId:"loggin_button", buttonType:"submit",buttonText:"Logar", specificClasses:"darkHover bg apple light text"})%>
                 <a href="" class="dark text">Esqueci a senha</a>
             </div>
         </form>
-        <div id="signup__sugestion__container" class="container__flex aligned__centered container__direction__column text Bmargin__bottom">
-            <p class="text__semibold">não tem uma conta?</p>
-            <%- include("../../components/button", {buttonId:"signup__sugestion__button",buttonType:"button", buttonText:"Criar Conta", specificClasses:"Mmargin__top bg bg__dark dark text"})%> 
+        <div id="signup__sugestion__container" class="container__flex aligned__centered container__direction__column text Bmargin__bottom sugestion__container fluid">
+            <p class="text__semibold dark text__bgLight">não tem uma conta?</p>
+            <%- include("../../components/button", {buttonId:"signup__sugestion__button",buttonType:"button", buttonText:"Criar Conta", specificClasses:"Mmargin__top bg bg__dark dark text toggleContainer"})%> 
         </div>
     </div>
 
-    <div id="signup__container" class="hidden Mmargin__top">
-        <form action="/" method="post" id="signup__form" style="background-color: rgb(41, 41, 42);">
-            <div class="input_wrapper">
-                <label for="" id="username__label">Username</label>
-                <input type="text" id="username__input" name="username" required>
-            </div>
-            <div class="input_wrapper">
+    <div id="signup__container" class="hidden Mmargin__top aligned__centered container__flex fluid">
+        <form action="/" method="post" id="signup__form" class="user__form rounded" style="background-color: rgb(41, 41, 42);">
+            <%- include("./inputWrapper", {inputId:"signup__username", inputType:"text", labelText:"Username", inputName:"username"})  %> 
+            <%- include("./inputWrapper", {inputId:"signup__email", inputType:"email", labelText:"Email", inputName:"email"})  %> 
+            <%- include("./inputWrapper", {inputId:"signup__password", inputType:"password", labelText:"Senha", inputName:"password"})  %>
+            <!-- <div class="input_wrapper">
                 <label for="" id="email__label">Email</label>
                 <input type="email" id="email__input" name="email" required>
-            </div>
-            <div class="input__wrapper">
+            </div> -->
+            <!-- <div class="input__wrapper">
                 <label for="" id="password__label">Senha</label>
                 <input type="password" id="password__input" name="password" required>
-            </div>
-            <div class="loggin__button__container">
-                <button type="submit" id="loggin_button">Registrar</button>
+            </div> -->
+            <div class="loggin__button__container container__flex justified__centered Bmargin__top">
+                <!-- <button type="submit" id="loggin_button">Registrar</button> -->
+                <%- include("../../components/button", {buttonId:"signup_button", buttonType:"submit",buttonText:"Registrar", specificClasses:"darkHover bg apple light text"})%>
             </div>
         </form>
-        <div class="loggin__sugestion__container">
-            <p>Já tem uma conta?</p>
-            <button id="loggin__sugestion__button">Logar</button>
+        <div id="signup__sugestion__container" class="container__flex aligned__centered container__direction__column text Bmargin__bottom Mmargin__right sugestion__container fluid">
+            <p class="text__semibold dark text__bgLight">Já tem uma conta?</p>
+            <%- include("../../components/button", {buttonId:"login__sugestion__button",buttonType:"button", buttonText:"Logar", specificClasses:"Mmargin__top bg bg__dark dark text toggleContainer"})%> 
         </div>
     </div>
 </div>
 
-<script>
+<script name="changing form action">
     const logginButton = document.querySelector("button#loggin_button");
     logginButton.addEventListener("click", () => {
         const userInput = document.querySelector("form#login__form input#username__input");
         const loginForm = document.querySelector("form#login__form").action = `/home/${userInput.value}`
+    })
+</script>
+
+<script>
+    const userformContainer = document.querySelector("#userForm__container");
+    const forms = [document.querySelector("#login__container"), document.querySelector("#signup__container")];
+    const buttons = document.querySelectorAll("button.toggleContainer");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            forms.forEach(form => {
+                form.classList.toggle("hidden");
+            })
+        })
     })
 </script>

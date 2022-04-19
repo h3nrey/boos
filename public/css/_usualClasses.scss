@@ -1,4 +1,4 @@
-.hidden{
+.disabled{
     display: none !important;
 }
 
@@ -52,6 +52,9 @@
     color: $lightTittleText;
 }
 
+.dark.text__bgLight{
+    color: $bgLight;
+}
 .dark.text{
     color: $darkText;
 }
@@ -82,12 +85,21 @@
     margin-top: 1rem;
 }
 
+.Bmargin__top{
+    margin-top: 2rem;
+}
+
 .Mmargin__bottom{
     margin-bottom: 1rem;
 }
 
 .Bmargin__bottom{
     margin-bottom: 2rem;
+}
+
+.Mmargin__right{
+
+    margin-right: 1rem;
 }
 
 //animations

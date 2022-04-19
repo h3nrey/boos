@@ -13,21 +13,50 @@
         border-radius: 0.25rem;
     }
 
-    #login__container{
+    #login__container,#signup__container{
         align-items: flex-end;
+        transform: scaleX(1);
+        .sugestion__container{
+            transform: translateX(0);
+        }
+    }
+
+    #login__container.hidden,#signup__container.hidden{
+        transform: scaleX(0);
+        width: 0;
+
+    }
+
+    #signup__container{
+        flex-direction: row-reverse;
+    }
+
+    #signup__container.hidden{
+        padding-left: 0;
+        .sugestion__container{
+            transform: translateX(50%);
+        }
     }
     
+    #login__container.hidden{
+        padding-right: 0;
+        .sugestion__container{
+            transform: translateX(-50%);
+        }
+    }
 }
 
 .user__form{
     padding: 0.9rem;
+    width: 16.7rem;
+    z-index: 23;
 }
 
 .lockscreen__input{
     height: 2.1rem;
-    width: 15rem;
+    width: 100%;
     padding-left: 0.5rem;
-
+    transition-timing-function:ease-in;
     &:focus-visible{
         outline: 0;
 
@@ -59,7 +88,7 @@
 }
 
 .userForm__button{
-    padding: 0.3rem 1.2rem;
+    padding: 0.5rem 1.2rem;
     font-size: 0.87rem;
 }
 
@@ -68,8 +97,6 @@
 }
 
 #signup__sugestion__container{
-    margin-left: 1.6rem;
-
     p{
         max-width: 90%;
         text-align: center;
@@ -78,4 +105,8 @@
             text-transform: uppercase;
         }
     }
+}
+
+.sugestion__container{
+    transition-delay:420ms;
 }

@@ -26,18 +26,18 @@
     
     document.querySelector("div.container").style.backgroundImage = `url('https://source.unsplash.com/${setResolution()}/?nature')`;
 </script>
-<script name="toggle containers">
-    
+<script name="toggle containers">  
     let isOut = true;
-    
-    
+
     const divs = ["div#date__container", "div#userForm__container"];
+
     divs.forEach(selector => {
         let element = document.querySelector(selector);
 
         document.querySelector("div.container").addEventListener("click", () => {
             if (isOut) {
-                element.classList.toggle("hidden");                
+                element.classList.toggle("disabled");
+                element.classList.add("hidden");                     
             }
         })
         element.addEventListener("mouseout", () => {

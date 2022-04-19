@@ -2,3 +2,35 @@ div.container{
     z-index: -2;
     position: fixed;
 }
+
+.container{
+    #date__container.hidden{
+        animation: scaleUp ease-in 1s;
+    }
+    #userForm__container.hidden{
+        animation: goDown ease-in 1s;
+    }
+}
+
+@keyframes goDown{
+    0%{
+        transform: translateY(-100%);
+    }
+    90%{
+        transform: translateY(10%);
+    }
+    100%{
+        transform: translateY(0); 
+    }
+}
+
+@keyframes scaleUp{
+    0%{
+        transform: scale(0.8)
+    } 90%{
+        transform: scale(1.2);
+    } 100% {
+        transform: scale(1);
+    }
+}
+    
