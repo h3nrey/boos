@@ -339,6 +339,10 @@ button {
   margin-right: 1rem;
 }
 
+.Mmargin__left {
+  margin-left: 1rem;
+}
+
 .fluid {
   -webkit-transition: all 400ms;
   transition: all 400ms;
@@ -360,11 +364,11 @@ div.container {
 }
 
 .container #userForm__container.hidden {
-  -webkit-animation: goDown ease-in 1s;
-          animation: goDown ease-in 1s;
+  -webkit-animation: goDownForm ease-in 1s;
+          animation: goDownForm ease-in 1s;
 }
 
-@-webkit-keyframes goDown {
+@-webkit-keyframes goDownForm {
   0% {
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
@@ -379,7 +383,7 @@ div.container {
   }
 }
 
-@keyframes goDown {
+@keyframes goDownForm {
   0% {
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
@@ -508,6 +512,11 @@ div.container {
   z-index: 23;
 }
 
+.user__form button.userForm__button {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.87rem;
+}
+
 .lockscreen__input {
   height: 2.1rem;
   width: 100%;
@@ -522,13 +531,14 @@ div.container {
 
 .input__underline {
   width: 100%;
+  position: relative;
 }
 
 .input__underline::after {
   width: 0;
   background-color: #77EE4F;
   content: "";
-  height: 8px;
+  height: 6px;
   position: absolute;
   -webkit-transform: translateY(-70%);
           transform: translateY(-70%);
@@ -539,16 +549,11 @@ div.container {
 }
 
 .lockscreen__input:focus-visible + .input__underline::after {
-  width: 49.8%;
+  width: 100%;
 }
 
 .input__wrapper {
   margin-top: 1rem;
-}
-
-.userForm__button {
-  padding: 0.5rem 1.2rem;
-  font-size: 0.87rem;
 }
 
 .form__button__container {
@@ -567,6 +572,11 @@ div.container {
 .sugestion__container {
   -webkit-transition-delay: 420ms;
           transition-delay: 420ms;
+}
+
+.sugestion__container button.userForm__button {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
 }
 
 .home__container {
@@ -654,6 +664,24 @@ div.container {
   }
 }
 
+@-webkit-keyframes goDown {
+  100% {
+    top: 90%;
+    -webkit-transform: scaleY(1, 1) translateX(-50%);
+            transform: scaleY(1, 1) translateX(-50%);
+  }
+  90% {
+    top: 50%;
+    -webkit-transform: scale(0.8, 1.2) translateX(-50%);
+            transform: scale(0.8, 1.2) translateX(-50%);
+  }
+  0% {
+    top: 58%;
+    -webkit-transform: scaleY(1, 1) translateX(-50%);
+            transform: scaleY(1, 1) translateX(-50%);
+  }
+}
+
 @keyframes goDown {
   100% {
     top: 90%;
@@ -695,7 +723,7 @@ button.button {
   font-size: 110%;
 }
 
-button.button i {
+button.button i, button.button span {
   z-index: 3;
   position: relative;
 }
@@ -723,7 +751,7 @@ button.button:hover::before {
   background-color: #F178B6;
 }
 
-.button.fuchisia:hover i {
+.button.fuchisia:hover {
   color: #FCDDEC;
 }
 
@@ -731,7 +759,7 @@ button.button:hover::before {
   background-color: #86EF63;
 }
 
-.button.apple:hover i {
+.button.apple:hover {
   color: #D8FBCC;
 }
 
@@ -739,7 +767,19 @@ button.button:hover::before {
   background-color: #7879F1;
 }
 
-.button.iris:hover i {
+.button.iris:hover {
   color: #A5A6F6;
+}
+
+.button.white::before {
+  background-color: #7879F1;
+}
+
+.button.white:hover {
+  color: #A5A6F6;
+}
+
+.button.black::before {
+  background-color: #302F3D;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,41 +1,35 @@
 <div id="userForm__container"  class="disabled rounded container__flex text">
     <div id="login__container" class="aligned__centered container__flex fluid">
-        <form action="" class="user__form rounded" id="login__form" class="text container__flex container__direction__column bg bg__dark" method="post" style="background-color: rgb(41, 41, 42);">
+        <form  id="login__form" class="user__form rounded text container__flex container__direction__column bg bg__dark" method="post">
             <%- include("./inputWrapper", {inputId:"login__username", inputType:"text", labelText:"Username", inputName:"username"})  %> 
             <%- include("./inputWrapper", {inputId:"login__password", inputType:"password", labelText:"Senha", inputName:"password"})  %> 
     
             <div class="loggin__button__container Bmargin__top form__button__container container__flex justified__spaced aligned__centered">
-                <%- include("../../components/button", {buttonId:"loggin_button", buttonType:"submit",buttonText:"Logar", specificClasses:"userForm__button darkHover bg apple light text"})%>
+                <%- include("../../components/button", {buttonId:"loggin_button", buttonType:"submit",buttonText:"<span>Logar</span>", specificClasses:"userForm__button dark bgLight apple text"})%>
                 <a href="" class="dark text">Esqueci a senha</a>
+                
             </div>
         </form>
-        <div id="signup__sugestion__container" class="container__flex aligned__centered container__direction__column text Bmargin__bottom sugestion__container fluid">
+        <div id="signup__sugestion__container" class="container__flex aligned__centered container__direction__column text Bmargin__bottom Mmargin__left sugestion__container fluid">
             <p class="text__semibold dark text__bgLight">não tem uma conta?</p>
-            <%- include("../../components/button", {buttonId:"signup__sugestion__button",buttonType:"button", buttonText:"Criar Conta", specificClasses:"Mmargin__top bg bg__dark dark text toggleContainer"})%> 
+            <%- include("../../components/button", {buttonId:"signup__sugestion__button",buttonType:"button", buttonText:"<span>Criar Conta<span/>", specificClasses:"userForm__button Mmargin__top bg bg__dark black dark text toggleContainer"})%> 
         </div>
     </div>
-
+    
     <div id="signup__container" class="hidden Mmargin__top aligned__centered container__flex fluid">
-        <form action="/" method="post" id="signup__form" class="user__form rounded" style="background-color: rgb(41, 41, 42);">
+        <form action="/" method="post" id="signup__form" class="user__form rounded bg bg__dark">
             <%- include("./inputWrapper", {inputId:"signup__username", inputType:"text", labelText:"Username", inputName:"username"})  %> 
             <%- include("./inputWrapper", {inputId:"signup__email", inputType:"email", labelText:"Email", inputName:"email"})  %> 
             <%- include("./inputWrapper", {inputId:"signup__password", inputType:"password", labelText:"Senha", inputName:"password"})  %>
-            <!-- <div class="input_wrapper">
-                <label for="" id="email__label">Email</label>
-                <input type="email" id="email__input" name="email" required>
-            </div> -->
-            <!-- <div class="input__wrapper">
-                <label for="" id="password__label">Senha</label>
-                <input type="password" id="password__input" name="password" required>
-            </div> -->
+            
             <div class="loggin__button__container container__flex justified__centered Bmargin__top">
                 <!-- <button type="submit" id="loggin_button">Registrar</button> -->
-                <%- include("../../components/button", {buttonId:"signup_button", buttonType:"submit",buttonText:"Registrar", specificClasses:"darkHover bg apple light text"})%>
+                <%- include("../../components/button", {buttonId:"signup_button", buttonType:"submit",buttonText:"<span>Registrar</span>", specificClasses:"userForm__button dark bgLight apple text"})%>
             </div>
         </form>
         <div id="signup__sugestion__container" class="container__flex aligned__centered container__direction__column text Bmargin__bottom Mmargin__right sugestion__container fluid">
             <p class="text__semibold dark text__bgLight">Já tem uma conta?</p>
-            <%- include("../../components/button", {buttonId:"login__sugestion__button",buttonType:"button", buttonText:"Logar", specificClasses:"Mmargin__top bg bg__dark dark text toggleContainer"})%> 
+            <%- include("../../components/button", {buttonId:"login__sugestion__button",buttonType:"button", buttonText:"<span>Logar</span>", specificClasses:"userForm__button Mmargin__top bg bg__dark dark black text toggleContainer"})%> 
         </div>
     </div>
 </div>

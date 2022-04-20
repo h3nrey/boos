@@ -8,11 +8,11 @@ div.container{
         animation: scaleUp ease-in 1s;
     }
     #userForm__container.hidden{
-        animation: goDown ease-in 1s;
+        animation: goDownForm ease-in 1s;
     }
 }
 
-@keyframes goDown{
+@keyframes goDownForm{
     0%{
         transform: translateY(-100%);
     }
