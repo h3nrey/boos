@@ -586,7 +586,7 @@ div.container {
   width: 18.4vw;
   padding: 1.2rem;
   position: absolute;
-  top: 60%;
+  top: 58%;
   left: 50%;
   -webkit-transform-origin: center left;
           transform-origin: center left;
@@ -668,7 +668,7 @@ div.container {
             transform: scale(0.8, 1.2) translateX(-50%);
   }
   100% {
-    top: 55%;
+    top: 58%;
     -webkit-transform: scaleY(1, 1) translateX(-50%);
             transform: scaleY(1, 1) translateX(-50%);
   }
@@ -686,7 +686,7 @@ div.container {
             transform: scale(0.8, 1.2) translateX(-50%);
   }
   100% {
-    top: 55%;
+    top: 58%;
     -webkit-transform: scaleY(1, 1) translateX(-50%);
             transform: scaleY(1, 1) translateX(-50%);
   }
@@ -704,7 +704,7 @@ div.container {
             transform: scale(0.8, 1.2) translateX(-50%);
   }
   0% {
-    top: 55%;
+    top: 58%;
     -webkit-transform: scaleY(1, 1) translateX(-50%);
             transform: scaleY(1, 1) translateX(-50%);
   }
