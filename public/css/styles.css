@@ -605,44 +605,6 @@ div.container {
   gap: 1rem;
 }
 
-#home__workspace #home__menu div#home__buttons__grid button.home__app__button {
-  padding: 1rem;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  font-size: 110%;
-}
-
-#home__workspace #home__menu div#home__buttons__grid button.home__app__button i {
-  z-index: 3;
-  position: relative;
-}
-
-#home__workspace #home__menu div#home__buttons__grid button.home__app__button::before {
-  background-color: #86EF63;
-  color: #D8FBCC;
-  width: 100%;
-  height: 100%;
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0%;
-  z-index: 2;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: 400ms;
-  transition: 400ms;
-}
-
-#home__workspace #home__menu div#home__buttons__grid button.home__app__button:hover i {
-  color: #D8FBCC;
-}
-
-#home__workspace #home__menu div#home__buttons__grid button.home__app__button:hover::before {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
 #home__workspace #home__menu #home__menu__footer {
   z-index: 3;
 }
@@ -773,11 +735,11 @@ button.button:hover::before {
   color: #D8FBCC;
 }
 
-.button.fuchisia::before {
+.button.iris::before {
   background-color: #7879F1;
 }
 
-.button.fuchisia:hover i {
+.button.iris:hover i {
   color: #A5A6F6;
 }
 /*# sourceMappingURL=styles.css.map */
