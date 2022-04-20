@@ -25,7 +25,7 @@ exports.home = (req,res) => {
                 if(password === data[0].password) res.render("home", {user: data[0]});
                 else res.render("index", {message:`${password} não é uma senha válida, tente novamente`})
             } else{
-                res.redirect("/")
+                res.redirect("/");
             }
 
             console.log("the data of database is \n", data)

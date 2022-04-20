@@ -48,6 +48,10 @@
     background-color: $bg;
 }
 
+.dark.bgLight{
+    background-color: $bgLight;
+}
+
 .light.text{
     color: $lightTittleText;
 }
@@ -58,7 +62,7 @@
 .dark.text{
     color: $darkText;
 }
-.dark.tittle{
+.dark.text__tittle{
     color: $darkTittleText;
 }
 

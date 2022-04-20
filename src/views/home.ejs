@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- <%-include ("./partials/head.ejs") %>  -->
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>boOS</title>
-    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@600;700&family=Roboto:wght@300;400;500;700&family=Send+Flowers&family=Sigmar+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-
+<%-include ("./partials/head.ejs") %>
 <body>
-    <% if (user != null) { %>
-        <h1>Home <%-user.username%></h1>     
-    <% } else {%>
-        <p>Esse usuário não existe.</p>
-        <a href="/"> voltar</a>
-    <% } %>
+    <div id="home__workspace" class="home__container ">
+        <div id="home__menu" class="dark bg bg__dark rounded disabled hidden">
+            <div id="home__buttons__grid">
+                <%-include("./components/button.ejs",{buttonId:"home__app__music", buttonType:"button",buttonText:"<i class='icon-app__music'></i>", specificClasses:" bgLight apple dark light text home__app__button"})%> 
+                <%-include("./components/button.ejs",{buttonId:"home__app__music", buttonType:"button",buttonText:"<i class='icon-app__calculator'></i>", specificClasses:"apple bgLight dark light text home__app__button"})%> 
+                <%-include("./components/button.ejs",{buttonId:"home__app__notepad", buttonType:"button",buttonText:"<i class='icon-app__notepad'></i>", specificClasses:"fuchisia bgLight dark light text home__app__button"})%> 
+                <%-include("./components/button.ejs",{buttonId:"home__app__music", buttonType:"button",buttonText:"<i class='icon-app__clock'></i>", specificClasses:" bgLight dark light text home__app__button"})%> 
+                <%-include("./components/button.ejs",{buttonId:"home__app__music", buttonType:"button",buttonText:"<i class='icon-app__brush'></i>", specificClasses:" bgLight dark light text home__app__button"})%> 
+                <%-include("./components/button.ejs",{buttonId:"home__app__music", buttonType:"button",buttonText:"<i class='icon-app__settings'></i>", specificClasses:" bgLight dark light text home__app__button"})%> 
+            </div>
+            <div id="home__menu__footer" class="Mmargin__top container__flex justified__spaced aligned__centered text text__semibold dark">
+                <p>feito por <a href="https://github.com/h3nrey" target="blank" class="text__tittle dark fluid">h3nrey</a></p>
+                <%-include("./components/button.ejs",{buttonId:"logout__button", buttonType:"button",buttonText:"<i class='icon-general__log-out'></i>", specificClasses:"darkHover bgLight dark light text home__app__button"})%> 
+            </div>
+        </div>
+    </div>
+    <footer class="home__container bg bg__dark container__flex aligned__centered justified__spaced">
+        <div class="text">bem vindo jojor</div>
+        <button id="menu__button" class="rounded bgLight dark bordless text fluid"> <i class="icon-logo"></i> </button>
+        <div class="hour__container text">
+            <p id="hour" class="text__tittle"></p>
+            <p id="date"></p>
+        </div>
+    </footer>
+    <script src="scripts/SettingDate.js"></script>
+    <script>
+        const menuButton = document.querySelector("button#menu__button");
+        menuButton.addEventListener("click", () => {
+            menu = document.querySelector("#home__menu");
+            menu.classList.toggle("hidden");
+            if (menu.classList.contains("disabled")) {
+                menu.classList.toggle("disabled");
+            } else {
+                setTimeout(() => {
+                    menu.classList.toggle("disabled")
+                }, 601);
+            }
+        })
+    </script>
 </body>
 </html>

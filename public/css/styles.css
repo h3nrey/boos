@@ -283,6 +283,10 @@ button {
   background-color: #1F1F29;
 }
 
+.dark.bgLight {
+  background-color: #302F3D;
+}
+
 .light.text {
   color: #F2F2F2;
 }
@@ -295,7 +299,7 @@ button {
   color: #9691AB;
 }
 
-.dark.tittle {
+.dark.text__tittle {
   color: #B2AEC1;
 }
 
@@ -563,5 +567,217 @@ div.container {
 .sugestion__container {
   -webkit-transition-delay: 420ms;
           transition-delay: 420ms;
+}
+
+.home__container {
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+#home__workspace {
+  background: url("https://cdn.pixabay.com/photo/2021/03/02/01/07/cyberpunk-6061251_960_720.jpg");
+  width: 100vw;
+  height: 92vh;
+  z-index: 0;
+  position: relative;
+}
+
+#home__workspace #home__menu {
+  width: 18.4vw;
+  padding: 1.2rem;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: goUp 600ms ease-in;
+          animation: goUp 600ms ease-in;
+  z-index: -1;
+}
+
+#home__workspace #home__menu div#home__buttons__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+#home__workspace #home__menu div#home__buttons__grid button.home__app__button {
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-size: 110%;
+}
+
+#home__workspace #home__menu div#home__buttons__grid button.home__app__button i {
+  z-index: 3;
+  position: relative;
+}
+
+#home__workspace #home__menu div#home__buttons__grid button.home__app__button::before {
+  background-color: #86EF63;
+  color: #D8FBCC;
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0%;
+  z-index: 2;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+
+#home__workspace #home__menu div#home__buttons__grid button.home__app__button:hover i {
+  color: #D8FBCC;
+}
+
+#home__workspace #home__menu div#home__buttons__grid button.home__app__button:hover::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+#home__workspace #home__menu #home__menu__footer {
+  z-index: 3;
+}
+
+#home__workspace #home__menu #home__menu__footer a:hover {
+  color: #F178B6;
+}
+
+#home__workspace #home__menu.hidden {
+  -webkit-animation-name: goDown;
+          animation-name: goDown;
+}
+
+@-webkit-keyframes goUp {
+  0% {
+    top: 90%;
+    -webkit-transform: scaleY(1, 1) translateX(-50%);
+            transform: scaleY(1, 1) translateX(-50%);
+  }
+  90% {
+    top: 50%;
+    -webkit-transform: scale(0.8, 1.2) translateX(-50%);
+            transform: scale(0.8, 1.2) translateX(-50%);
+  }
+  100% {
+    top: 55%;
+    -webkit-transform: scaleY(1, 1) translateX(-50%);
+            transform: scaleY(1, 1) translateX(-50%);
+  }
+}
+
+@keyframes goUp {
+  0% {
+    top: 90%;
+    -webkit-transform: scaleY(1, 1) translateX(-50%);
+            transform: scaleY(1, 1) translateX(-50%);
+  }
+  90% {
+    top: 50%;
+    -webkit-transform: scale(0.8, 1.2) translateX(-50%);
+            transform: scale(0.8, 1.2) translateX(-50%);
+  }
+  100% {
+    top: 55%;
+    -webkit-transform: scaleY(1, 1) translateX(-50%);
+            transform: scaleY(1, 1) translateX(-50%);
+  }
+}
+
+@keyframes goDown {
+  100% {
+    top: 90%;
+    -webkit-transform: scaleY(1, 1) translateX(-50%);
+            transform: scaleY(1, 1) translateX(-50%);
+  }
+  90% {
+    top: 50%;
+    -webkit-transform: scale(0.8, 1.2) translateX(-50%);
+            transform: scale(0.8, 1.2) translateX(-50%);
+  }
+  0% {
+    top: 55%;
+    -webkit-transform: scaleY(1, 1) translateX(-50%);
+            transform: scaleY(1, 1) translateX(-50%);
+  }
+}
+
+footer {
+  width: 100%;
+  height: 8vh;
+}
+
+footer button#menu__button {
+  font-size: 1.8rem;
+  padding: 0.25rem;
+  padding-bottom: -10px;
+}
+
+footer button#menu__button:hover {
+  color: #F178B6;
+}
+
+button.button {
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-size: 110%;
+}
+
+button.button i {
+  z-index: 3;
+  position: relative;
+}
+
+button.button::before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0%;
+  z-index: 2;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+
+button.button:hover::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.button.fuchisia::before {
+  background-color: #F178B6;
+}
+
+.button.fuchisia:hover i {
+  color: #FCDDEC;
+}
+
+.button.apple::before {
+  background-color: #86EF63;
+}
+
+.button.apple:hover i {
+  color: #D8FBCC;
+}
+
+.button.fuchisia::before {
+  background-color: #7879F1;
+}
+
+.button.fuchisia:hover i {
+  color: #A5A6F6;
 }
 /*# sourceMappingURL=styles.css.map */
