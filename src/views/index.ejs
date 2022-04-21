@@ -6,7 +6,9 @@
         <%-include ("./partials/date.ejs")%>
         <%- include("./partials/lockscreen/userForm.ejs")%> 
         <% if (message != null) { %>
-            <p><%=message%></p>        
+            <div class="operation__result bg bg__dark">
+                <p class="dark text"><%=message%></p>        
+            </div>
         <% } %>
     </div>
 </body>

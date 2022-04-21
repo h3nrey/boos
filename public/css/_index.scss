@@ -12,6 +12,17 @@ div.container{
     }
 }
 
+.operation__result{
+    position: fixed;
+    left: 70%;
+    padding: 2rem 1rem;
+    border-radius: 0.5rem 0 0.5rem 0;
+
+    span{
+        color: $darkTittleText;
+    }
+}
+
 @keyframes goDownForm{
     0%{
         transform: translateY(-100%);

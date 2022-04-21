@@ -59,16 +59,20 @@
 .dark.text__bgLight{
     color: $bgLight;
 }
-.dark.text{
-    color: $darkText;
-}
-.dark.text__tittle{
-    color: $darkTittleText;
-}
 
 //themes bg
 .bg.apple{
     background-color: $apple;
+}
+
+
+
+.dark.text{
+    color: $darkText;
+}
+
+.dark.text__tittle{
+    color: $darkTittleText;
 }
 
 .bg.bg__dark{

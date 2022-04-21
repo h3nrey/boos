@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%-include ("./partials/head.ejs") %>
-<body>
+<body class="apple">
     <div id="home__workspace" class="home__container ">
         <div id="home__menu" class="dark bg bg__dark rounded disabled hidden">
             <div id="home__buttons__grid">
@@ -13,15 +13,15 @@
                 <%-include("./components/button.ejs",{buttonId:"home__app__music", buttonType:"button",buttonText:"<i class='icon-app__settings'></i>", specificClasses:"apple bgLight dark light text home__app__button"})%> 
             </div>
             <div id="home__menu__footer" class="Mmargin__top container__flex justified__spaced aligned__centered text text__semibold dark">
-                <p>feito por <a href="https://github.com/h3nrey" target="blank" class="text__tittle dark fluid">h3nrey</a></p>
-                <%-include("./components/button.ejs",{buttonId:"logout__button", buttonType:"button",buttonText:"<i class='icon-general__log-out'></i>", specificClasses:"apple bgLight dark light text home__app__button"})%> 
+                <p>feito por <a href="https://github.com/h3nrey" target="blank" class="text__tittle dark fluid" id="myhub">h3nrey</a></p>
+                <a href="/" class="dark text" id="logout__link"><i class='icon-general__log-out'></i></a>
             </div>
         </div>
     </div>
     <footer class="home__container bg bg__dark container__flex aligned__centered justified__spaced">
-        <div class="text">bem vindo jojor</div>
+        <div class="text">bem vindo, <span class="text__tittle"><%=user.username%></span></div>
         <button id="menu__button" class="rounded bgLight dark bordless text fluid"> <i class="icon-logo"></i> </button>
-        <div class="hour__container text">
+        <div id="hour__container" class="text container__flex container__direction__column">
             <p id="hour" class="text__tittle"></p>
             <p id="date"></p>
         </div>

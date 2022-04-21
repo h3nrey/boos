@@ -222,6 +222,30 @@ button {
   height: 100vh;
 }
 
+.apple .text {
+  color: #86EF63;
+}
+
+.apple .text__tittle {
+  color: #77EE4F;
+}
+
+.iris .text {
+  color: #7879F1;
+}
+
+.iris .text__tittle {
+  color: #7879F1;
+}
+
+.fuchisia .text {
+  color: #F178B6;
+}
+
+.fuchisia .text__tittle {
+  color: #EF5DA8;
+}
+
 .disabled {
   display: none !important;
 }
@@ -295,16 +319,16 @@ button {
   color: #302F3D;
 }
 
+.bg.apple {
+  background-color: #86EF63;
+}
+
 .dark.text {
   color: #9691AB;
 }
 
 .dark.text__tittle {
   color: #B2AEC1;
-}
-
-.bg.apple {
-  background-color: #86EF63;
 }
 
 .bg.bg__dark {
@@ -366,6 +390,17 @@ div.container {
 .container #userForm__container.hidden {
   -webkit-animation: goDownForm ease-in 1s;
           animation: goDownForm ease-in 1s;
+}
+
+.operation__result {
+  position: fixed;
+  left: 70%;
+  padding: 2rem 1rem;
+  border-radius: 0.5rem 0 0.5rem 0;
+}
+
+.operation__result span {
+  color: #B2AEC1;
 }
 
 @-webkit-keyframes goDownForm {
@@ -586,6 +621,8 @@ div.container {
 
 #home__workspace {
   background: url("https://cdn.pixabay.com/photo/2021/03/02/01/07/cyberpunk-6061251_960_720.jpg");
+  background-position: center;
+  background-size: cover;
   width: 100vw;
   height: 92vh;
   z-index: 0;
@@ -620,12 +657,22 @@ div.container {
 }
 
 #home__workspace #home__menu #home__menu__footer a:hover {
-  color: #F178B6;
+  color: #86EF63;
+}
+
+#home__workspace #home__menu #home__menu__footer a#logout__link {
+  font-size: 1.2rem;
 }
 
 #home__workspace #home__menu.hidden {
   -webkit-animation-name: goDown;
           animation-name: goDown;
+}
+
+footer #hour__container {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 
 @-webkit-keyframes goUp {
