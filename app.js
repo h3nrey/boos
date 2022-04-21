@@ -22,5 +22,9 @@ app.use(express.json());
 const router = require("./src/server/routes/base");
 app.use("/", router);
 
+app.get("/home/:user", (req,res) => {
+    res.render("home");
+})
+
 //listening port
 app.listen(port, () => console.log(`listening on port ${port}`));

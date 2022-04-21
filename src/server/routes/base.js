@@ -5,13 +5,16 @@ const createUser = require("../controllers/createUserController");
 const res = require("express/lib/response");
 
 router.get("/", (req,res) => {
-    res.render("index", {message : null});
+    let result = req.query.result;
+    res.render("index", {message : result});
 })
 
-router.post("/home/:username", homeController.home);
+router.post("/:username", homeController.home);
 router.post("/", createUser.insert);
-router.get("/home", (req,res) => {
-    res.render("home");
-})
+
+//essa rota é apenas para testes
+// router.get("/home/:username", (req,res) => {
+//     res.render("home");
+// })
 
 module.exports = router;

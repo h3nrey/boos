@@ -37,12 +37,12 @@
 <script name="changing form action">
     const logginButton = document.querySelector("button#loggin_button");
     logginButton.addEventListener("click", () => {
-        const userInput = document.querySelector("form#login__form input#username__input");
-        const loginForm = document.querySelector("form#login__form").action = `/home/${userInput.value}`
+        const userInput = document.querySelector("form#login__form input#login__username__input");
+        const loginForm = document.querySelector("form#login__form").action = `/${userInput.value}`
     })
 </script>
 
-<script>
+<script name="toggle forms">
     const userformContainer = document.querySelector("#userForm__container");
     const forms = [document.querySelector("#login__container"), document.querySelector("#signup__container")];
     const buttons = document.querySelectorAll("button.toggleContainer");
