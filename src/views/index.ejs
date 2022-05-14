@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%-include ("./partials/head.ejs") %> 
-<body>
+<body class="dark">
     <div class="container container__flex container__flex__centered">
         <%-include ("./partials/date.ejs")%>
         <%- include("./partials/lockscreen/userForm.ejs")%> 
@@ -12,6 +12,12 @@
         <% } %>
     </div>
 </body>
+<script>
+    console.log(JSON.stringify(users, null, 2))
+    users.forEach(element => {
+        console.log("macacos");
+    });
+</script>
 <script name="setup background resolution">
     const setResolution = () => {
         let resolution = "1920x1080";

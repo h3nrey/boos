@@ -161,7 +161,7 @@
   content: "\e922";
 }
 
-.icon-general__search:before {
+.check:before {
   content: "\e923";
 }
 
@@ -222,28 +222,24 @@ button {
   height: 100vh;
 }
 
-.apple .text {
-  color: #86EF63;
+.dark .bg {
+  background-color: #1F1F29;
 }
 
-.apple .text__tittle {
-  color: #77EE4F;
+.dark .bg__dark {
+  background-color: #1E1D27;
 }
 
-.iris .text {
-  color: #7879F1;
+.dark .bg__light {
+  background-color: #302F3D;
 }
 
-.iris .text__tittle {
-  color: #7879F1;
+.dark .text {
+  color: #9691AB;
 }
 
-.fuchisia .text {
-  color: #F178B6;
-}
-
-.fuchisia .text__tittle {
-  color: #EF5DA8;
+.dark .text__tittle {
+  color: #B2AEC1;
 }
 
 .disabled {
@@ -323,12 +319,12 @@ button {
   background-color: #86EF63;
 }
 
-.dark.text {
-  color: #9691AB;
+.bg.iris {
+  background-color: #7879F1;
 }
 
-.dark.text__tittle {
-  color: #B2AEC1;
+.bg.fuchisia {
+  background-color: #F178B6;
 }
 
 .bg.bg__dark {
@@ -380,6 +376,8 @@ button {
 div.container {
   z-index: -2;
   position: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .container #date__container.hidden {
@@ -478,6 +476,98 @@ div.container {
 
 #date__container #date {
   font-size: 1.5rem;
+}
+
+.window__container {
+  padding: 0 1rem;
+}
+
+.window__header {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.content {
+  padding-bottom: 1rem;
+}
+
+form {
+  outline: 0;
+  border: 0;
+}
+
+form fieldset {
+  border: 0;
+}
+
+form fieldset legend {
+  font-size: 1.25rem;
+}
+
+form fieldset#account {
+  border: 0;
+}
+
+#background__search__container {
+  overflow: hidden;
+}
+
+#background__search__container #background__search__bar {
+  height: 3rem;
+}
+
+#background__search__container #background__search__bar input {
+  height: 100%;
+  width: 50%;
+  outline: 0;
+  padding-left: 0.5rem;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+#background__search__container #background__search__bar #background__search__button {
+  padding: 0.5rem;
+  height: 100%;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.themes__container .theme__button {
+  padding: 0.5rem 1rem;
+  color: white;
+  position: relative;
+}
+
+.themes__container .theme__button i {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.themes__container .theme__button.checked {
+  position: relative;
+  z-index: 1;
+  -webkit-filter: blur(100%);
+          filter: blur(100%);
+}
+
+.themes__container .theme__button.checked i {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 #userForm__container {

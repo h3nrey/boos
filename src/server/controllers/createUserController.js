@@ -16,7 +16,8 @@ exports.insert = (req,res) => {
     
     pool.getConnection((err,connection) => {
         if(err) throw err;
-        connection.query("INSERT INTO user SET username = ?, email = ?, password = ?", [username, email, password,], (err, user) => {
+        connection.query("INSERT INTO user SET username = ?, email = ?, password = ?", [username, email, password], (err, user) => {
+            console.log("password", password)
             connection.release();
 
             if(!err) {

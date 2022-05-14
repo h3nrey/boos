@@ -10,7 +10,7 @@ const pool = createPool({
 })
 
 exports.home = (req,res) => {
-    const  {username, email, password} = req.body;
+    const  {username, password} = req.body;
 
     pool.getConnection((err, connection) => {
         if(err) throw err;
@@ -25,7 +25,7 @@ exports.home = (req,res) => {
                 res.redirect("/?result=" + message);
             }
             if(!err && data !== undefined) {
-                if(password === data[0].password) res.render("home", {user: data[0]});
+                if(password === data[0].password) res.render("home", {user: data[0], credentials:{username,password}});
                 else {
                     let message = encodeURIComponent(`${password} não é uma senha válida`);
                     res.redirect("/?result=" + message);
@@ -36,5 +36,16 @@ exports.home = (req,res) => {
 
             console.log("the data of database is \n", data)
         })
+    })
+}
+
+exports.settings = (req,res) => {
+    pool.getConnection((err, connection) => {
+        if(err) throw err;
+        console.log("connected at " + connection.threadID);
+
+        connection.query("UPDATE user SET username = ?, WHERE id = ?", [req.query.id])
+        connection.release();
+
     })
 }

@@ -23,7 +23,6 @@
             <%- include("./inputWrapper", {inputId:"signup__password", inputType:"password", labelText:"Senha", inputName:"password"})  %>
             
             <div class="loggin__button__container container__flex justified__centered Bmargin__top">
-                <!-- <button type="submit" id="loggin_button">Registrar</button> -->
                 <%- include("../../components/button", {buttonId:"signup_button", buttonType:"submit",buttonText:"<span>Registrar</span>", specificClasses:"userForm__button dark bgLight apple text"})%>
             </div>
         </form>
@@ -35,11 +34,18 @@
 </div>
 
 <script name="changing form action">
-    const logginButton = document.querySelector("button#loggin_button");
-    logginButton.addEventListener("click", () => {
-        const userInput = document.querySelector("form#login__form input#login__username__input");
-        const loginForm = document.querySelector("form#login__form").action = `/${userInput.value}`
-    })
+    // const logginButton = document.querySelector("button#loggin_button");
+    // let users =
+    // logginButton.addEventListener("click", () => {
+    //     const userInput = document.querySelector("form#login__form input#login__username__input");
+    //     console.log(users)
+    //     let userId;
+    //     users.forEach(user => {
+    //         if(user.username == userInput.value) userId = user.id;
+    //         console.log(user.username);
+    //     });
+    //     const loginForm = document.querySelector("form#login__form").action = `/${userId}`
+    // })
 </script>
 
 <script name="toggle forms">

@@ -1,27 +1,49 @@
+//apple
 .apple{
     .text{
-        color: $apple;
+        //color: $apple;
     }
     
     .text__tittle{
-        color: $strongApple;
+        //color: $strongApple;
     }
 }
+//iris
 .iris{
     .text{
-        color: $iris;
+        //color: $iris;
     }
     
     .text__tittle{
-        color: $iris;
+        //color: $iris;
     }
 }
+//fuchisia
 .fuchisia{
     .text{
-        color: $fuchisia;
+        //color: $fuchisia;
     }
     
     .text__tittle{
-        color: $strongFuchisia;
+        //color: $strongFuchisia;
     }
 }
+//dark
+.dark{
+    .bg{
+        background-color: $bg;
+    }
+    .bg__dark{
+        background-color: $bgDark;
+    }
+    .bg__light{
+        background-color: $bgLight;
+    }
+    .text{
+        color: $darkText;
+    }
+    .text__tittle{
+        color: $darkTittleText;
+    }
+}
+//light

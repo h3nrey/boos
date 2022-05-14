@@ -1,0 +1,64 @@
+<div class="bg window container__flex container__direction__column">
+    <div class="bg__dark window__header window__container">
+        <i class="window__header__icon icon-app__settings text"></i>
+        <span class="text">Configurações</span>
+    </div>
+    <div class="content window__container">
+        <form action="/:<%=credentials.username%>" class="bordeless" method="post">
+            <fieldset id="account" class="bordeless">
+                <legend class="text__tittle">Usuário</legend>
+                <div id="input__container" class="container__flex">
+                    <%- include("../lockscreen/inputWrapper", {inputId:"account__username", inputType:"text", labelText:"Username", inputName:"username"})  %> 
+                    <%- include("../lockscreen/inputWrapper", {inputId:"account__username", inputType:"text", labelText:"Email", inputName:"email"})  %> 
+                    <%- include("../lockscreen/inputWrapper", {inputId:"account__username", inputType:"text", labelText:"Senha", inputName:"senha"})  %> 
+                </div>        
+            </fieldset>
+
+            <fieldset id="appearance" class="Bmargin__top">
+                <h2 class="text__tittle">Aparência</h2>
+                <div class="themes__container">
+                    <h3 class="text">Tema</h3>
+                    <select name="themes" id="themes__select" class="disabled">
+                    <option value="apple">apple</option>
+                    <option value="fuchisia">fuchisia</option>
+                    <option value="iris">iris</option>
+                    </select>
+                    <button id="apple" type="button" class="apple bg theme__button rounded bordless text fluid" id="apple__button">Apple <i class="icon-general__check fluid rounded apple bg"></i> </button>
+                    <button id="fuchisia" type="button" class="fuchisia bg theme__button rounded bordless text fluid" id="fuchisia__button">fuchisia <i class="icon-general__check fluid rounded fuchisia bg"></i> </button>
+                    <button id="iris" type="button" class="iris bg theme__button rounded bordless text fluid" id="iris__button">iris <i class="icon-general__check fluid rounded iris bg"></i> </button>
+                </div>
+                <div id="background__search__container" class="Mmargin__top">
+                    <h3 class="text">Image de fundo</h3>
+                    <div id="background__search__bar">
+                        <input type="text" class="bg__light text bordless">
+                        <%- include("../../components/button", {buttonId:"background__search__button",buttonType:"button", buttonText:"<i class='icon-general__search'></i>", specificClasses:"userForm__button bg__light black dark text toggleContainer"})%>   
+                    </div>
+                </div>
+            </fieldset>
+
+            <%- include("../../components/button", {buttonId:"signup_button", buttonType:"submit",buttonText:"<span>Salvar</span>", specificClasses:"userForm__button Bmargin__top dark bgLight apple text"})%>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    const userSettings = {
+        username: "",
+        password: "",
+        themeColor: "apple",
+        theme: "dark",
+        backgroundImage: "https://cdn.pixabay.com/photo/2021/03/02/01/07/cyberpunk-6061251_960_720.jpg"
+    }
+    
+    const themeButtons = document.querySelectorAll("button.theme__button");
+    themeButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            themeButtons.forEach(el => el.classList.remove("checked"))
+            button.classList.toggle("checked");
+            userSettings.themeColor = button.id;
+            document.querySelect("select#themes__select").selectedIndex = index;
+            console.log(document.querySelect("select#themes__select").selectedIndex);
+        })
+    });
+</script>
